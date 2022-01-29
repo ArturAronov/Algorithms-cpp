@@ -20,20 +20,12 @@ public:
       }
       
       while(j<n){
-        /*
-        This loop is required if nums1 is larger than nums2, such as
-        nums1=[1,2,3,0,0,0], m=3, nums2=[2,5,6], n=3
-        */
         temp[k]=nums2[j];
         k++;
         j++;
       }
       
       while(i<m){
-        /*
-        This loop is required if nums1 is smaller than nums2, such as
-        num1=[1], m=1, nums2=[], n=0
-        */
         temp[k]=nums1[i];
         k++;
         i++;
