@@ -70,7 +70,7 @@ public:
       
       while(i<m){
         /*
-        This loop is required if nums1 is smaller than nums2, such as
+        This loop is required if n is smaller than m, such as
         num1=[1], m=1, nums2=[], n=0
         */
         temp[k]=nums1[i];
