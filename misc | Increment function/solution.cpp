@@ -2,19 +2,19 @@
 
 #include <iostream>
 #include <vector>
-#include <numeric>
-#include <algorithm>    //std::transform
-#include <functional>   //std::plus
+#include <algorithm>      //std::transform
 
-int operator(int num);
+int reducer(int num);
 
 int main(){
-  std::vector<int> foo = {1,2,3,4,5,6,7,8,9};
-  std::vector<int> bar;
+  std::vector<int> miku = {1,2,3,4,5,6,7,8,9};
+  std::vector<int> chan;
   
-  bar.resize(foo.size());
-  std::transform (foo.begin(), foo.end(), bar.begin(), operator);
-  for(auto i:bar){
+  //This is required to avoid segmentation fault: [1] 35716 segmentation fault  ./solution
+  chan.resize(miku.size());
+  std::transform (miku.begin(), miku.end(), chan.begin(), reducer);
+  
+  for(auto i:chan){
     std::cout<<i<<' ';
   }
 
@@ -22,7 +22,7 @@ int main(){
 }
 
 
-int operator(int num){
+int reducer(int num){
   return num*=num;
 }
 
